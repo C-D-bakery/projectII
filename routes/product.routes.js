@@ -1,10 +1,12 @@
 const express = require('express');
-const router = express.Router();
+
 const Product = require("../models/Product.model")
+
+const router = express.Router();
 
 //CREATE: display form
 router.get("/product/create", (req, res, next) => {
-   console.log(req.body)
+   
     res.render("../views/products/new-product.hbs")
     // .then(
     // )
@@ -16,7 +18,7 @@ router.get("/product/create", (req, res, next) => {
 
 // CREATE - process form
 router.post("/product/create",(req,res,next)=>{
-console.log(req.body)
+
     const productDetails = {
         product :req.body.product,
         name: req.body.name,
@@ -27,8 +29,9 @@ console.log(req.body)
     }
    
     Product.create(productDetails)
-    console.log(productDetails)
+    
         .then(productFromDB => {
+            console.log(productFromDB)
             res.redirect("/product");
         })
         .catch(e => {
@@ -36,10 +39,25 @@ console.log(req.body)
             
           });
           console.error(e);
-          res.redirect("/product/create")
+          res.redirect("products/new-product")
 })
 
 
+
+
+router.get("/product",(req,res,next)=>{
+    Product.find()
+    .then(productArr=>{
+        const data ={
+            items: productArr
+        }
+        res.render("products/product", data)
+    })
+    .catch(e => {
+        console.log("Product not found", e);
+        next(e);
+      });
+})
 
 
 
