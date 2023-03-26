@@ -1,7 +1,13 @@
 <h2>Products</h2>
 
 {{#each items}}
-<ul>
-    <li>{{this.name}}</li>
-</ul>   
+
+<div>
+  <img src="/uploads/{{this.image}}" alt="{{this.name}}">   
+<p> {{this.name}} </p>
+<p> {{this.price}}  </p>
+</div>
+
+   
+   
 {{/each}}

@@ -1,6 +1,6 @@
 <h2> Add a New product</h2>
 
-<form method="POST" action="/product/create">                
+<form method="POST" action="/product/create" >                
 
 <div>
  <legend>Select a type of your product:</legend>
@@ -46,14 +46,18 @@
  </label> 
 </div>
 
-{{!-- <div>
- <label for="avatar">Choose a picture:
-  <input type="file" name="image" accept="image/png, image/jpeg">
- </label>
-</div>  --}}
+ <div>
+    <label>Image:
+      <input type="file" name="image">
+    </label>
+  </div>
 
 <div>
  <button type="submit"> Create </button>
 </div>
    
+</form>
+
+<form method="POST" action="/product/{{this._id}}/delete">
+<button type = "submit">Delete</button>
 </form>
