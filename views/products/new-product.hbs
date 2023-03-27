@@ -1,15 +1,14 @@
 <h2> Add a New product</h2>
 
-<form method="POST" action="/product/create">                
+<form method="POST" action="/product/create" enctype="multipart/form-data" >                
 
- 
-<label>Product:
-    <legend>Select a type of your product:</legend>
+<div>
+ <legend>Select a type of your product:</legend>
 
     <label><input type="radio" name="product" value="Cake">Cake</label><br/>
-    <label><input type="radio" name="product" value="Bread">Bread</label>
-
-</label>
+    <label><input type="radio" name="product" value="Bread" >Bread</label>
+ 
+</div>
 
 <div>
  <label>Name:
@@ -18,9 +17,8 @@
 </div>
 
 
-
 <div>
- <label >Price:
+ <label>  Price:
     <input type="number" name="price" min="10" max="500">
 
  </label>
@@ -28,19 +26,14 @@
 
 <div>
  <label>Quantity:
-    <input type="number" name="quantity" min="1" max="50">
+    <input type="number" name="quantity" step="any" min="1" max="50">
 
  </label>
 </div>
 
 <div>
  <label>Ingredients:
-  <textarea id="w3review" name="ingredients" rows="4" cols="50">
-
-</textarea>
-
-
-
+  <textarea id="w3review" name="ingredients" rows="4" cols="50"></textarea>
  </label>
 </div>
 
@@ -53,14 +46,15 @@
  </label> 
 </div>
 
-<div>
- <label for="avatar">Choose a picture:
-  <input type="file" name="image" accept="image/png, image/jpeg">
- </label>
-</div>
+ <div>
+    <label>Image:
+      <input type="file" name="image">
+    </label>
+  </div>
 
 <div>
  <button type="submit"> Create </button>
 </div>
    
 </form>
+

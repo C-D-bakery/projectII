@@ -1,0 +1,64 @@
+<link rel="stylesheet" href="/stylesheets/style.css" />
+<h2> Update product </h2>
+
+<form action="/product/{{product._id}}/update" method="POST">
+
+  <div>
+    <legend>Select a type of your product:</legend>
+
+    <label><input type="radio" name="product" value="Cake" />Cake</label><br />
+    <label><input type="radio" name="product" value="Bread" />Bread</label>
+
+  </div>
+
+  <div>
+    <label>Name:
+      <input type="text" name="name" value="{{name}}" />
+    </label>
+  </div>
+
+  <div>
+    <label>
+      Price:
+      <input type="number" name="price" min="10" max="500" value="{{price}}" />
+
+    </label>
+  </div>
+
+  <div>
+    <label>Quantity:
+      <input
+        type="number"
+        name="quantity"
+        step="any"
+        min="1"
+        max="50"
+        value="{{quantity}}"
+      />
+
+    </label>
+  </div>
+
+  <div>
+    <label>Ingredients:
+      <textarea
+        name="ingredients"
+        rows="4"
+        cols="50"
+        value="{{ingredients}}"
+      ></textarea>
+    </label>
+  </div>
+
+  <div>
+    <label>gluten_free :
+      <select name="gluten_free">
+        <option name="gluten_free" value="No">No</option>
+        <option name="gluten_free" value="Yes">Yes</option>
+      </select>
+    </label>
+  </div>
+  <div>
+    <button type="submit"> Update! </button>
+  </div>
+</form>

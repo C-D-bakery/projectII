@@ -1,7 +1,17 @@
 <h2>Products</h2>
 
-{{#each products}}
-<ul>
-    <li>{{this.name}}</li>
-</ul>   
+{{#each items}}
+
+<div>
+  <img src="/uploads/{{this.image}}" ">   
+<p> {{this.name}} </p>
+<p> {{this.price}}  </p>
+<a href="/product/{{this._id}}/update">Edit</a>
+    
+</div>
+
+   <form method="POST" action="/product/{{this._id}}/delete">
+<button type = "submit">Delete</button>
+</form>
+   
 {{/each}}
