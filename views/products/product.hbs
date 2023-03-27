@@ -6,8 +6,12 @@
   <img src="/uploads/{{this.image}}" alt="{{this.name}}">   
 <p> {{this.name}} </p>
 <p> {{this.price}}  </p>
+<a href="/product/{{this._id}}/update">Edit</a>
+    
 </div>
 
-   
+   <form method="POST" action="/product/{{this._id}}/delete">
+<button type = "submit">Delete</button>
+</form>
    
 {{/each}}

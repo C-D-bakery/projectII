@@ -4,6 +4,7 @@ const Product = require("../models/Product.model");
 
 const router = express.Router();
 
+
 //CREATE: display form
 router.get("/product/create", (req, res, next) => {
   res.render("../views/products/new-product.hbs");
@@ -58,13 +59,57 @@ router.get("/product", (req, res, next) => {
 /////////remove product
 
 router.post("/product/:id/delete", async (req, res, next) => {
-  console.log(req.params.id);
   try {
     await Product.findByIdAndRemove(req.params.id);
-    res.redirect("/products ");
+    res.redirect("/product");
   } catch (err) {
     console.log("error delete", err);
   }
 });
+
+//UPDATE: display form
+router.get("/product/:productId/update", (req, res, next) => {
+  const { productId } = req.params;
+
+  let productDetails;
+ 
+  Product.findById(productId)
+    .then((productFromDB) => {
+      productDetails = productFromDB;
+      console.log(productDetails)
+    }).then(()=>{
+      const data ={
+        product : productDetails
+      }
+      res.render("products/product-update", data);
+      
+    })
+    
+    .catch((e) => {
+      console.log("error updating", e);})
+});
+
+//UPDATE: Post form
+router.post("/product/:productId/update", (req, res, next) => {
+  const newProduct = {
+    product: req.body.product,
+    name: req.body.name,
+    price: req.body.price,
+    quantity: req.body.quantity,
+    ingredients: req.body.ingredients,
+    gluten_free: req.body.gluten_free,
+    image: req.body.image,
+  };
+  
+  Product.findByIdAndUpdate(req.params.productId, newProduct, { new: true })
+    .then(() => {
+      res.redirect("/product");
+    })
+    .catch((e) => {
+      console.log("error updating list of products", e);
+    });
+});
+
+
 
 module.exports = router;
