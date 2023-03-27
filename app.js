@@ -29,7 +29,7 @@ app.use("/", indexRoutes);
 
 
 const authRoutes = require("./routes/auth.routes");
-app.use("/auth", authRoutes);
+app.use("/", authRoutes);
 
 const productRoutes = require("./routes/product.routes");
 app.use("/", productRoutes);

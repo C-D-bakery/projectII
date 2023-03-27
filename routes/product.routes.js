@@ -71,15 +71,13 @@ router.post("/product/:id/delete", async (req, res, next) => {
 router.get("/product/:productId/update", (req, res, next) => {
   const { productId } = req.params;
 
-  let productDetails;
+  
  
   Product.findById(productId)
-    .then((productFromDB) => {
-      productDetails = productFromDB;
-      console.log(productDetails)
-    }).then(()=>{
+    
+    .then((product)=>{
       const data ={
-        product : productDetails
+        product : product
       }
       res.render("products/product-update", data);
       
@@ -100,7 +98,7 @@ router.post("/product/:productId/update", (req, res, next) => {
     gluten_free: req.body.gluten_free,
     image: req.body.image,
   };
-  
+  console.log(req.params.productId)
   Product.findByIdAndUpdate(req.params.productId, newProduct, { new: true })
     .then(() => {
       res.redirect("/product");

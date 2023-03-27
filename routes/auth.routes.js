@@ -17,7 +17,8 @@ const isLoggedIn = require("../middleware/isLoggedIn");
 
 // GET /auth/signup
 router.get("/signup", isLoggedOut, (req, res) => {
-  res.render("auth/signup");
+
+ res.render("auth/signup");
 });
 
 // POST /auth/signup
@@ -64,7 +65,7 @@ router.post("/signup", isLoggedOut, (req, res) => {
       return User.create({ username, email, password: hashedPassword });
     })
     .then((user) => {
-      res.redirect("/auth/login");
+      res.redirect("/login");
     })
     .catch((error) => {
       if (error instanceof mongoose.Error.ValidationError) {
@@ -108,7 +109,7 @@ router.post("/login", isLoggedOut, (req, res, next) => {
   }
 
   // Search the database for a user with the email submitted in the form
-  User.findOne({ email })
+  User.findOne({email})
     .then((user) => {
       // If the user isn't found, send an error message that user provided wrong credentials
       if (!user) {
