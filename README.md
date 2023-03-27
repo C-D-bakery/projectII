@@ -11,7 +11,7 @@
 -cake / bread
 (img & title -->link into the module)
 -module for products
-(name="String" ,price="Number",main ingredients="Array", unique ="boolen=true" ,)
+(name="String" ,price="Number",main ingredients="Array", unique ="boolean=true" ,gluten_free = "boolean")
 quantity
 condition{
 type: String, enum:["new,used,"needs repair']
