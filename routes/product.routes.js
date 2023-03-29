@@ -1,23 +1,19 @@
 const express = require("express");
 
-const Product = require("../models/Product.model");
+const Product = require("../models/product.model.js");
 
 const router = express.Router();
 const isUserLoggedIn = require("../middleware/isLoggedIn");
 
-
-
 //CREATE: display form
 router.get("/product/create", isUserLoggedIn, (req, res, next) => {
-  console.log(req.session.currentUser)
+  console.log(req.session.currentUser);
   res.render("../views/products/new-product.hbs");
-  
-  
 });
 
 // CREATE - process form
 router.post("/product/create", isUserLoggedIn, (req, res, next) => {
-  console.log(req.body)
+  console.log(req.body);
   const productDetails = {
     product: req.body.product,
     name: req.body.name,
@@ -59,13 +55,13 @@ router.get("/product", (req, res, next) => {
 
 /////Product details
 router.get("/product/:productId/details", (req, res, next) => {
-  const {productId}=req.params
-  
+  const { productId } = req.params;
+
   Product.findById(productId)
-  
-    .then(productDetails => {
-      console.log(productDetails)
-     
+
+    .then((productDetails) => {
+      console.log(productDetails);
+
       res.render("products/product-details", productDetails);
     })
     .catch((e) => {
@@ -76,7 +72,7 @@ router.get("/product/:productId/details", (req, res, next) => {
 
 /////////remove product
 
-router.post("/product/:id/delete",isUserLoggedIn, async (req, res, next) => {
+router.post("/product/:id/delete", isUserLoggedIn, async (req, res, next) => {
   try {
     await Product.findByIdAndRemove(req.params.id);
     res.redirect("/product");
@@ -86,28 +82,25 @@ router.post("/product/:id/delete",isUserLoggedIn, async (req, res, next) => {
 });
 
 //UPDATE: display form
-router.get("/product/:productId/update",isUserLoggedIn, (req, res, next) => {
+router.get("/product/:productId/update", isUserLoggedIn, (req, res, next) => {
   const { productId } = req.params;
 
-  
- 
   Product.findById(productId)
-    
-    .then((product)=>{
-    
-      const data ={
-        product : product
-      }
+
+    .then((product) => {
+      const data = {
+        product: product,
+      };
       res.render("products/product-update", data);
-      
     })
-    
+
     .catch((e) => {
-      console.log("error updating", e);})
+      console.log("error updating", e);
+    });
 });
 
 //UPDATE: Post form
-router.post("/product/:productId/update",isUserLoggedIn, (req, res, next) => {
+router.post("/product/:productId/update", isUserLoggedIn, (req, res, next) => {
   const newProduct = {
     product: req.body.product,
     name: req.body.name,
@@ -117,7 +110,7 @@ router.post("/product/:productId/update",isUserLoggedIn, (req, res, next) => {
     gluten_free: req.body.gluten_free,
     image: req.body.image,
   };
-  console.log(req.params.productId)
+  console.log(req.params.productId);
   Product.findByIdAndUpdate(req.params.productId, newProduct, { new: true })
     .then(() => {
       res.redirect("/product");
@@ -126,6 +119,5 @@ router.post("/product/:productId/update",isUserLoggedIn, (req, res, next) => {
       console.log("error updating list of products", e);
     });
 });
-
 
 module.exports = router;

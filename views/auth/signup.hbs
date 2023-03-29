@@ -1,53 +1,69 @@
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp"
+  crossorigin="anonymous"
+/>
 <h2>Register</h2>
 
-<form method="POST" action="/signup" >
+<form method="POST" action="/signup">
 
-    {{#if errorMessage}}
-        <p class="warning">
-            {{errorMessage}}
-        </p>
-    {{/if}}
+  {{#if errorMessage}}
+    <p class="warning">
+      {{errorMessage}}
+    </p>
+  {{/if}}
 
-<div class ="body-container">
-  <div id ="form">
-    <h2>SignUp</h2>
-    <form class="row g-3" action="/signup" method="POST">
+  <div class="body-container">
+    <div id="form">
+      <h2>SignUp</h2>
+      <form class="row g-3" action="/signup" method="POST">
 
-     <div class="col-12">
-       <label class="form-label">Username</label>
-       <input type="text" class="form-control" name="username" placeholder="bakery123">
-     </div>
+        <div class="col-12">
+          <label class="form-label">Username</label>
+          <input
+            type="text"
+            class="form-control"
+            name="username"
+            placeholder="bakery123"
+          />
+        </div>
 
-     <div class="col-12">
-       <label class="form-label">Surname</label>
-       <input type="text" class="form-control" name="surname" placeholder="Cherry">
-     </div>
-    
-     <div class="col-12">
-       <label class="form-label">Email</label>
-       <input type="email" class="form-control" name="email" placeholder="bakery123@gmail.com">
-     </div>
+        <div class="col-12">
+          <label class="form-label">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            name="email"
+            placeholder="bakery123@gmail.com"
+          />
+        </div>
 
-     <div class="col-12">
-       <label class="form-label">Password</label>
-       <input type="password" class="form-control" name="password" placeholder="******">
-     </div>
+        <div class="col-12">
+          <label class="form-label">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            name="password"
+            placeholder="******"
+          />
+        </div>
 
-      <div class="col-12">
-       <button type="sumbit" class="btn btn-primary">Create an account</button>
-     </div>
+        <div class="col-12">
+          <button type="sumbit" class="btn btn-primary">Create an account</button>
+        </div>
 
-    </form>
-   </div>
-  </div>  
+      </form>
+    </div>
+  </div>
 
-<div class="info">
-   <p>Already have an account? Click <a href="/login">here</a> to login.</p>
-</div>
-
-
-
+  <div class="info">
+    <p>Already have an account? Click <a href="/login">here</a> to login.</p>
+  </div>
 
 </form>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+  crossorigin="anonymous"
+></script>
