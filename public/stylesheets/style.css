@@ -10,3 +10,34 @@ a {
 h2 {
   color: 15px;
 }
+
+
+.productImg{
+height: 100%;
+width: auto;
+object-position: center;
+ 
+
+}
+.productImgFrame{
+  height: 15rem;
+  width: 15rem;
+overflow:hidden ;
+object-fit: cover;
+border-radius: 25px;
+box-shadow: 0 0 20px rgba(0, 0, 0, 0.343) ;
+
+}
+
+.productImgDetails{
+  height: 30rem;
+  width: 30rem;
+overflow:hidden ;
+object-fit: cover;
+border-radius: 25px;
+box-shadow: 0 0 20px rgba(0, 0, 0, 0.343) ;
+
+}
+
+
+

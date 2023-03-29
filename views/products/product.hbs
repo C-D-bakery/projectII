@@ -1,17 +1,31 @@
+<link rel="stylesheet" href="./stylesheets/style.css" />
+
 <h2>Products</h2>
 
 {{#each items}}
-
-<div>
-  <img src="/uploads/{{this.image}}" ">   
-<p> {{this.name}} </p>
-<p> {{this.price}}  </p>
-<a href="/product/{{this._id}}/update">Edit</a>
-    
-</div>
-
-   <form method="POST" action="/product/{{this._id}}/delete">
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top"  src={{this.image}} alt="product">
+  <div class="card-body">
+    <h5 class="card-title">{{this.name}}</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Price:{{this.price}}€</li>
+    <li class="list-group-item">Quantity Available:{{ this.quantity}}</li>
+    <li class="list-group-item">Made by:</li>
+  </ul>
+  <div class="card-body">
+    <a href="/product/{{this._id}}/update" class="card-link">Edit</a>
+ <a href="/product/{{this._id}}/details" class="card-link">Details</a>
+ <form method="POST" action="/product/{{this._id}}/delete">
 <button type = "submit">Delete</button>
 </form>
-   
+    
+  </div>
+</div>
+
+
 {{/each}}
+
+
+
