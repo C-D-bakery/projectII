@@ -1,8 +1,12 @@
-module.exports = (req, res, next) => {
-  // checks if the user is logged in when trying to access a specific page
-  if (!req.session.currentUser) {
-    return res.redirect("/user/login");
+function isUserLoggedIn(req, res, next) {
+  if (req.session.currentUser) {
+      next();
+  } else {
+      res.redirect("/login");
   }
+}
 
-  next();
-};
+//login-logout
+
+
+module.exports = isUserLoggedIn;

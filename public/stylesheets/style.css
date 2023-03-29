@@ -1,16 +1,86 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding: -20px;
+  margin: 30px;
+  font: 23px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+header {
+  background-color: ccd3db;
+  height: 220px;
 }
 
-a {
-  color: #00b7ff;
+nav justify-content-end {
+  background-color: ccd3db;
+  top: 80%;
+}
+.nav-item {
+  font-family: Rocher;
 }
 
-h2 {
-  color: 15px;
+.icon {
+  margin: 2px;
+  width: 150px;
+  height: 150px;
+  padding: 14px;
+}
+body button {
+  padding: 25px;
+  background-color: white;
+  color: black;
+  font-size: 25px;
+}
+.dark-mode {
+  background-color: #252525;
+  color: white;
+}
+.darkIcon {
+  width: 45px;
+  height: 45px;
+  margin: -24;
+}
+.section1 {
+  background-image: url("../images/Green\ flower2.jpeg");
+  height: 650px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  color: white;
+}
+h1 {
+  text-align: center;
+  position: absolute;
+  top: 30%;
+  left: 42%;
+  color: white;
+  font-family: "Montserrat";
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
+section a {
+  background-color: #edb7e4;
+  text-align: center;
+  position: absolute;
+  top: 30%;
+  left: 40%;
+  letter-spacing: 2px;
+  margin: 138px auto 60px;
+  padding: 15px 62px 17px;
+}
+section a:hover {
+  background-color: #adcce9;
+}
+
+footer {
+  position: absolute;
+  width: 100vw;
+  bottom: -400px;
+  background-color: darkgrey;
+  height: 30px;
+  text-align: center;
+  padding: 10px;
+  font-size: 12px;
+}
 
 .productImg{
 height: 100%;
@@ -20,8 +90,8 @@ object-position: center;
 
 }
 .productImgFrame{
-  height: 15rem;
-  width: 15rem;
+  height: 18rem;
+  width: 18rem;
 overflow:hidden ;
 object-fit: cover;
 border-radius: 25px;
@@ -39,5 +109,10 @@ box-shadow: 0 0 20px rgba(0, 0, 0, 0.343) ;
 
 }
 
+
+#shopTitle{
+ text-align: center;
+ margin: 30px 0;
+}
 
 

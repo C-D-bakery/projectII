@@ -34,8 +34,8 @@ const productSchema = new Schema(
     //  madeby:{
     //    type: Schema.Types.ObjectId,
     //    ref: "User"
-    //  },
-   }
+    //   }
+    }
 );
 
 const Product = model("Product",  productSchema);

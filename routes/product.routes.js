@@ -3,28 +3,20 @@ const express = require("express");
 const Product = require("../models/Product.model");
 
 const router = express.Router();
+const isUserLoggedIn = require("../middleware/isLoggedIn");
 
 
-// const handlebars = require('handlebars');
-
-// handlebars.registerHelper('split', function(str, .) {
-//   return str.split(separator);
-// });
 
 //CREATE: display form
-router.get("/product/create", (req, res, next) => {
+router.get("/product/create", isUserLoggedIn, (req, res, next) => {
   console.log(req.session.currentUser)
   res.render("../views/products/new-product.hbs");
-  // .then(
-  // )
-  // .catch(e => {
-  //     console.log("error getting authors from DB", e);
-  //     next(e);
-  //   });
+  
+  
 });
 
 // CREATE - process form
-router.post("/product/create", (req, res, next) => {
+router.post("/product/create", isUserLoggedIn, (req, res, next) => {
   console.log(req.body)
   const productDetails = {
     product: req.body.product,
@@ -34,7 +26,7 @@ router.post("/product/create", (req, res, next) => {
     ingredients: req.body.ingredients,
     gluten_free: req.body.gluten_free,
     image: req.body.image,
-    madeBy: req.session.currentUser._id
+    // madeBy: req.session.currentUser._id
   };
 
   Product.create(productDetails)
@@ -84,7 +76,7 @@ router.get("/product/:productId/details", (req, res, next) => {
 
 /////////remove product
 
-router.post("/product/:id/delete", async (req, res, next) => {
+router.post("/product/:id/delete",isUserLoggedIn, async (req, res, next) => {
   try {
     await Product.findByIdAndRemove(req.params.id);
     res.redirect("/product");
@@ -94,7 +86,7 @@ router.post("/product/:id/delete", async (req, res, next) => {
 });
 
 //UPDATE: display form
-router.get("/product/:productId/update", (req, res, next) => {
+router.get("/product/:productId/update",isUserLoggedIn, (req, res, next) => {
   const { productId } = req.params;
 
   
@@ -115,7 +107,7 @@ router.get("/product/:productId/update", (req, res, next) => {
 });
 
 //UPDATE: Post form
-router.post("/product/:productId/update", (req, res, next) => {
+router.post("/product/:productId/update",isUserLoggedIn, (req, res, next) => {
   const newProduct = {
     product: req.body.product,
     name: req.body.name,
@@ -134,7 +126,6 @@ router.post("/product/:productId/update", (req, res, next) => {
       console.log("error updating list of products", e);
     });
 });
-
 
 
 module.exports = router;
