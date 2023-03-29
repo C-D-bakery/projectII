@@ -30,9 +30,12 @@ const productSchema = new Schema(
     image:{
       type: String,
       required: true
+    },
+    //  madeby:{
+    //    type: Schema.Types.ObjectId,
+    //    ref: "User"
+    //   }
     }
-    
-   }
 );
 
 const Product = model("Product",  productSchema);

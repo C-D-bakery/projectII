@@ -1,60 +1,67 @@
 <h2> Add a New product</h2>
 
-<form method="POST" action="/product/create" enctype="multipart/form-data" >                
+<form method="POST" action="/product/create">
 
-<div>
- <legend>Select a type of your product:</legend>
+  <div>
+    <legend>Select a type of your product:</legend>
 
-    <label><input type="radio" name="product" value="Cake">Cake</label><br/>
-    <label><input type="radio" name="product" value="Bread" >Bread</label>
- 
-</div>
+    <label><input type="radio" name="product" value="Cake" />Cake</label><br />
+    <label><input type="radio" name="product" value="Bread" />Bread</label>
 
-<div>
- <label>Name:
-    <input type="text" name="name">
-    </label>
-</div>
+  </div>
 
-
-<div>
- <label>  Price:
-    <input type="number" name="price" min="10" max="500">
-
- </label>
-</div>
-
-<div>
- <label>Quantity:
-    <input type="number" name="quantity" step="any" min="1" max="50">
-
- </label>
-</div>
-
-<div>
- <label>Ingredients:
-  <textarea id="w3review" name="ingredients" rows="4" cols="50"></textarea>
- </label>
-</div>
-
-<div>
- <label>gluten_free :
-   <select name="gluten_free" >
-    <option name="gluten_free"  value="No">No</option>
-    <option name="gluten_free"  value="Yes">Yes</option>
-  </select>
- </label> 
-</div>
-
- <div>
-    <label>Image:
-      <input type="file" name="image">
+  <div>
+    <label>Name:
+      <input type="text" name="name" />
     </label>
   </div>
 
-<div>
- <button type="submit"> Create </button>
-</div>
-   
+  <div>
+    <label>
+      Price:
+      <input type="number" name="price" min="10" max="500" />
+
+    </label>
+  </div>
+
+  <div>
+    <label>Quantity:
+      <input type="number" name="quantity" step="any" min="1" max="50" />
+
+    </label>
+  </div>
+
+  <div>
+    <label>Ingredients:
+      <textarea id="w3review" name="ingredients" rows="4" cols="50"></textarea>
+    </label>
+  </div>
+
+  <div>
+    <label>gluten_free :
+      <select name="gluten_free">
+        <option name="gluten_free" value="No">No</option>
+        <option name="gluten_free" value="Yes">Yes</option>
+      </select>
+    </label>
+  </div>
+
+  <div>
+    <label>Image:
+      <input type="text" name="image" />
+    </label>
+  </div>
+
+  <div>
+    <button type="submit"> Create </button>
+  </div>
+
 </form>
 
+<form
+  method="POST"
+  action="/product/create"
+  onsubmit="return redirectIfBread()"
+>
+  <!-- form fields -->
+</form>
