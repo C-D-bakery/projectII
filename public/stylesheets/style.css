@@ -1,16 +1,16 @@
 body {
   padding: -20px;
-  margin: 30px;
+  margin: 58px;
   font: 23px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 header {
   background-color: ccd3db;
-  height: 220px;
+  height: 230px;
 }
 
 nav justify-content-end {
   background-color: ccd3db;
-  top: 80%;
+  top: 100%;
 }
 .nav-item {
   font-family: Rocher;
@@ -39,7 +39,7 @@ body button {
 }
 .section1 {
   background-image: url("../images/Green\ flower2.jpeg");
-  height: 650px;
+  height: 750px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -71,13 +71,29 @@ section a:hover {
   background-color: #adcce9;
 }
 
+#carousel_a00e {
+  background-image: url("../images/Contact\ Flower.jpeg");
+  height: 800px;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  padding: 20px;
+}
+
+.u-section-7 .u-container-layout-1 {
+  padding: 100px;
+}
+
 footer {
   position: absolute;
   width: 100vw;
-  bottom: -400px;
+  /* bottom: -1200px; */
   background-color: darkgrey;
-  height: 30px;
+  height: 50px;
   text-align: center;
-  padding: 10px;
-  font-size: 12px;
+  padding: 15px;
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
 }

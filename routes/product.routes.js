@@ -1,7 +1,7 @@
 const express = require("express");
 
 const Product = require("../models/product.model.js");
-
+const fileUploader = require("../config/cloudinary.config");
 const router = express.Router();
 const isUserLoggedIn = require("../middleware/isLoggedIn");
 

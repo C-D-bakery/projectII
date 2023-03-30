@@ -51,17 +51,16 @@
       <input type="text" name="image" />
     </label>
   </div>
+  {{! <form action="/product/create" method="post" enctype="multipart/form-data"> </form> 
+
+    <label>Image:
+      <input type="file" name="image" class="form-control-file" />
+    </label>
+  </div>
+  }}
 
   <div>
-    <button type="submit"> Create </button>
+    <button type="submit" class="btn btn-primary"> Create </button>
   </div>
 
-</form>
-
-<form
-  method="POST"
-  action="/product/create"
-  onsubmit="return redirectIfBread()"
->
-  <!-- form fields -->
 </form>

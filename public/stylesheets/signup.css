@@ -1,0 +1,31 @@
+h2 {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.body-container {
+  display: flex;
+  justify-content: center;
+  background-color: #77aad9;
+  height: 480px;
+}
+
+.col-12 {
+  background-color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 50px 10px -35px;
+  padding: 10px 20px 10px 20px;
+}
+
+#createButton {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.info {
+  display: flex;
+  justify-content: center;
+  background-color: #fbeced;
+  padding-inline-start: 0%;
+}
