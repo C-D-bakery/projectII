@@ -21,8 +21,8 @@
           />
           <div class="card-body">
             <h5 class="card-title">{{this.name}}</h5>
-            <p class="card-text">Some quick example text to build on the card
-              title and make up the bulk of the card's content.</p>
+            {{!-- <p class="card-text">Some quick example text to build on the card
+              title and make up the bulk of the card's content.</p> --}}
           </div>
           <ul class="list-group list-group-flush">
             <li class="list-group-item">Price: {{this.price}}€</li>
@@ -30,10 +30,10 @@
             <li class="list-group-item">Made by: {{this.madeby.username}} </li>
           </ul>
           <div class="card-body">
-            <a href="/product/{{this._id}}/update" class="card-link">Edit</a>
-            <a
+            <a id="EnD" href="/product/{{this._id}}/update" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" >Edit</a>
+            <a id="EnD" 
               href="/product/{{this._id}}/details"
-              class="card-link"
+              class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" 
             >Details</a>
             <form method="POST" action="/product/{{this._id}}/delete">
               <br />
