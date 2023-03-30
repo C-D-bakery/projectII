@@ -12,32 +12,37 @@ router.get("/product/create", isUserLoggedIn, (req, res, next) => {
 });
 
 // CREATE - process form
-router.post("/product/create", isUserLoggedIn, (req, res, next) => {
-  console.log(req.body);
-  const productDetails = {
-    product: req.body.product,
-    name: req.body.name,
-    price: req.body.price,
-    quantity: req.body.quantity,
-    ingredients: req.body.ingredients,
-    gluten_free: req.body.gluten_free,
-    image: req.body.image,
-    // madeBy: req.session.currentUser._id
-  };
+router.post(
+  "/product/create",
+  isUserLoggedIn,
+  fileUploader.single("image"),
+  (req, res, next) => {
+    console.log(req.body);
+    const productDetails = {
+      product: req.body.product,
+      name: req.body.name,
+      price: req.body.price,
+      quantity: req.body.quantity,
+      ingredients: req.body.ingredients,
+      gluten_free: req.body.gluten_free,
+      image: req.file.path,
+      // madeBy: req.session.currentUser._id
+    };
 
-  Product.create(productDetails)
+    Product.create(productDetails)
 
-    .then((productFromDB) => {
-      console.log(productFromDB);
-      res.redirect("/product");
-    })
-    .catch((e) => {
-      console.log("error creating new product", e);
+      .then((productFromDB) => {
+        console.log(productFromDB);
+        res.redirect("/product");
+      })
+      .catch((e) => {
+        console.log("error creating new product", e);
+      });
+    console.error((e) => {
+      res.redirect("products/new-product", e);
     });
-  console.error((e) => {
-    res.redirect("products/new-product", e);
-  });
-});
+  }
+);
 
 router.get("/product", (req, res, next) => {
   Product.find()
@@ -88,10 +93,7 @@ router.get("/product/:productId/update", isUserLoggedIn, (req, res, next) => {
   Product.findById(productId)
 
     .then((product) => {
-      const data = {
-        product: product,
-      };
-      res.render("products/product-update", data);
+      res.render("products/product-update", product);
     })
 
     .catch((e) => {

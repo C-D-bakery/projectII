@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="/stylesheets/product.css" />
 <h2> Update product </h2>
 
-<form action="/product/{{product._id}}/update" method="POST">
+<form action="/product/{{_id}}/update" method="POST">
 
   <div>
     <legend>Select a type of your product:</legend>
@@ -57,11 +57,12 @@
         <option name="gluten_free" value="Yes">Yes</option>
       </select>
     </label>
-    <div>
+    <input type="hidden" name="image" value="{{image}}" />
+    {{! <div>
       <label>Image:
-        <input type="text" name="image" />
+        
       </label>
-    </div>
+    </div> }}
   </div>
   <div>
     <button type="submit"> Update! </button>

@@ -1,0 +1,24 @@
+h1 {
+  text-align: center;
+  position: absolute;
+  top: 30%;
+  left: 42%;
+  color: white;
+  font-family: "Montserrat";
+  text-transform: uppercase;
+  font-weight: 2000px;
+}
+
+#section1 {
+  background-color: #edb7e4;
+  text-align: center;
+  position: absolute;
+  top: 30%;
+  left: 40%;
+  letter-spacing: 2px;
+  margin: 138px auto 60px;
+  padding: 15px 62px 17px;
+}
+#section1 :hover {
+  background-color: #adcce9;
+}

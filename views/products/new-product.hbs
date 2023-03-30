@@ -1,6 +1,6 @@
 <h2> Add a New product</h2>
 
-<form method="POST" action="/product/create">
+<form method="POST" action="/product/create" enctype="multipart/form-data">
 
   <div>
     <legend>Select a type of your product:</legend>
@@ -46,11 +46,13 @@
     </label>
   </div>
 
-  <div>
+  {{! <div>
     <label>Image:
       <input type="text" name="image" />
     </label>
-  </div>
+  </div> }}
+
+  <input type="file" name="image" class="form-control-file" />
   {{! <form action="/product/create" method="post" enctype="multipart/form-data"> </form> 
 
     <label>Image:
