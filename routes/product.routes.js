@@ -115,7 +115,7 @@ router.post("/product/:productId/update", isUserLoggedIn, (req, res, next) => {
     quantity: req.body.quantity,
     ingredients: req.body.ingredients,
     gluten_free: req.body.gluten_free,
-    image: image,
+    // image: image,
   };
   console.log(req.params.productId);
   Product.findByIdAndUpdate(req.params.productId, newProduct, { new: true })

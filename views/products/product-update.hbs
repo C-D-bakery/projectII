@@ -17,14 +17,15 @@
   <div>
     <legend>Select the type:</legend>
 
-    <label><input type="radio" name="product" value="Cake" />Cake</label>
-    <label><input type="radio" name="product" value="Bread" />Bread</label>
+    <label><input type="radio" name="product" value="{{product}}" />Cake</label>
+    <label><input type="radio" name="product" value="{{product}}" />Bread</label>
 
   </div>
   <div class="mb-3">
     <label for="exampleInputName" class="form-label">Name</label>
     <input
-      name="{{name}}"
+      value="{{name}}"
+       name="name"
       type="text"
       class="form-control"
       placeholder="Banana"
@@ -44,7 +45,7 @@
       name="price"
       min="10"
       max="500"
-      {{price}}
+      value="{{price}}"
     />
   </div>
 
@@ -57,7 +58,7 @@
   </div> --}}
 <div class="mb-3">
     <label for="exampleInputQuantity" class="form-label">Quantity</label>
-    <input name="{{quantity}}"type="number"class="form-control" step="any" min="1" max="100" />
+    <input name="quantity" value="{{quantity}}" type="number"class="form-control" step="any" min="1" max="100" />
     <div>
 
   {{!-- <div>
@@ -80,6 +81,7 @@
           name="ingredients"
           rows="4"
           cols="50"
+          
         ></textarea>
     <div>
 {{!-- 
@@ -95,7 +97,7 @@
   </div> --}}
 <div class="mb-3">
      <label for="exampleInputGluten_free" class="form-label">Gluten_free</label>
-     <select name="gluten_free" class="form-control"name="gluten_free">
+     <select name="gluten_free" class="form-control" value="{{gluten_free}}">
           <option name="gluten_free" value="No">No</option>
           <option name="gluten_free" value="Yes">Yes</option>
     </select>
@@ -109,7 +111,7 @@
       </select>
     </label> --}}
 
-    <input type="hidden" name="image" value="{{image}}" />
+    {{!-- <input type="hidden" name="image" value="{{image}}" /> --}}
 
 <div class="mb-3">
     <label for="exampleInputcreate" class="form-label"></label>
