@@ -4,7 +4,7 @@ body {
 }
 header {
   background-color: ccd3db;
-  height: 230px;
+  height: 150px;
 }
 
 nav justify-content-end {
@@ -13,8 +13,11 @@ nav justify-content-end {
 }
 .nav-item {
   font-family: Rocher;
+  justify-items: center;
 }
-
+.container-fluid {
+  height: 70px;
+}
 .icon {
   margin: 2px;
   width: 150px;
@@ -33,9 +36,10 @@ body button {
   color: white;
 }
 .darkIcon {
-  width: 45px;
-  height: 45px;
-  margin: -24;
+  width: 78px;
+  height: 78px;
+  margin: -25px;
+  border-radius: 65%;
 }
 .section1 {
   background-image: url("../images/Green\ flower2.jpeg");
@@ -46,7 +50,9 @@ body button {
   position: relative;
   color: white;
 }
-
+.dark {
+  border-radius: 65%;
+}
 #carousel_a00e {
   background-image: url("../images/Contact\ Flower.jpeg");
   height: 650px;
@@ -81,6 +87,54 @@ h5 {
 
 h9 {
   font-size: x-small;
+}
+.makingof {
+  height: 650px;
+  width: 828px;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  padding: 50px;
+}
+#about1 {
+  background-image: url("../images/making\ of.jpeg");
+  width: 150px;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  padding: 280px;
+  margin-bottom: 90px;
+  margin-left: 50px;
+}
+.about2 {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 15px;
+  align-content: center;
+}
+.about3 {
+  padding-left: 50px;
+}
+h4 {
+  font-family: "Montserrat";
+  padding: 29px;
+  height: 80px;
+}
+#aboutC {
+  text-indent: 100px;
+  line-height: 2.2;
+  margin-right: 20px;
+}
+.icon2 {
+  margin: 2px;
+  width: 220px;
+  height: 220px;
+  padding: 20px;
+  border-radius: 50%;
+  margin-bottom: 50px;
+  margin-left: 500px;
 }
 footer {
   position: absolute;
