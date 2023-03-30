@@ -9,7 +9,7 @@ const isUserLoggedIn = require("../middleware/isLoggedIn");
 router.get(
   "/product/create",
   isUserLoggedIn,
-
+  fileUploader.single("image"),
   (req, res, next) => {
     res.render("../views/products/new-product.hbs");
   }

@@ -1,13 +1,13 @@
 h2 {
   text-align: center;
-  margin-top: 20px;
+  margin-bottom: -2rem;
 }
 
 .body-container {
   display: flex;
   justify-content: center;
   background-color: #77aad9;
-  height: 480px;
+  height: 550px;
 }
 
 .col-12 {
@@ -28,4 +28,11 @@ h2 {
   justify-content: center;
   background-color: #fbeced;
   padding-inline-start: 0%;
+}
+#signinD {
+  letter-spacing: 1px;
+  text-transform: lowercase;
+  display: flex;
+  justify-content: center;
+  text-size-adjust: small;
 }
