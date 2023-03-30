@@ -1,5 +1,5 @@
 const express = require("express");
-
+const Order = require("../models/order.model.js"); /////new
 const Product = require("../models/product.model.js");
 const fileUploader = require("../config/cloudinary.config");
 const router = express.Router();
@@ -124,6 +124,35 @@ router.post("/product/:productId/update", isUserLoggedIn, (req, res, next) => {
     })
     .catch((e) => {
       console.log("error updating list of products", e);
+    });
+});
+
+router.get("/product/order", isUserLoggedIn, (req, res) => {
+  res.render("../views/products/order.hbs");
+});
+/////new
+// set up route to handle form submission
+router.post("/product/order", isUserLoggedIn, (req, res) => {
+  // create a new Order document using data from the form submission
+  const newOrder = new Order({
+    method: req.body.product,
+    name: req.body.name,
+    billingAddress: req.body.billingAddress,
+    date: req.body.date,
+    quantityOrder: req.body.quantityOrder,
+    payment: req.body.payment,
+  });
+
+  // save the new Order document to the database
+  newOrder
+    .save()
+    .then(() => {
+      res.send("Order placed successfully!");
+    })
+
+    .catch((err) => {
+      console.log(err);
+      res.status(500).send("Error placing order.");
     });
 });
 
