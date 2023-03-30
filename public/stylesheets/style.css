@@ -20,6 +20,7 @@ nav justify-content-end {
   width: 150px;
   height: 150px;
   padding: 14px;
+  border-radius: 50%;
 }
 body button {
   padding: 25px;
@@ -91,4 +92,9 @@ footer {
   text-align: center;
   padding: 15px;
   font-size: 18px;
+}
+#headerLayout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }

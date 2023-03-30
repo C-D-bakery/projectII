@@ -6,10 +6,14 @@ const router = express.Router();
 const isUserLoggedIn = require("../middleware/isLoggedIn");
 
 //CREATE: display form
-router.get("/product/create", isUserLoggedIn, (req, res, next) => {
-  console.log(req.session.currentUser);
-  res.render("../views/products/new-product.hbs");
-});
+router.get(
+  "/product/create",
+  isUserLoggedIn,
+
+  (req, res, next) => {
+    res.render("../views/products/new-product.hbs");
+  }
+);
 
 // CREATE - process form
 router.post(
@@ -17,7 +21,7 @@ router.post(
   isUserLoggedIn,
   fileUploader.single("image"),
   (req, res, next) => {
-    console.log(req.body);
+    const currentUser = req.session.currentUser;
     const productDetails = {
       product: req.body.product,
       name: req.body.name,
@@ -26,7 +30,7 @@ router.post(
       ingredients: req.body.ingredients,
       gluten_free: req.body.gluten_free,
       image: req.file.path,
-      // madeBy: req.session.currentUser._id
+      madeby: currentUser._id,
     };
 
     Product.create(productDetails)
@@ -46,6 +50,7 @@ router.post(
 
 router.get("/product", (req, res, next) => {
   Product.find()
+    .populate("madeby")
     .then((productArr) => {
       const data = {
         items: productArr,
@@ -110,7 +115,7 @@ router.post("/product/:productId/update", isUserLoggedIn, (req, res, next) => {
     quantity: req.body.quantity,
     ingredients: req.body.ingredients,
     gluten_free: req.body.gluten_free,
-    image: req.body.image,
+    image: image,
   };
   console.log(req.params.productId);
   Product.findByIdAndUpdate(req.params.productId, newProduct, { new: true })
