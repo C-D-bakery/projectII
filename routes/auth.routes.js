@@ -17,8 +17,7 @@ const isLoggedIn = require("../middleware/isLoggedIn");
 
 // GET /auth/signup
 router.get("/signup", isLoggedOut, (req, res) => {
-
- res.render("auth/signup");
+  res.render("auth/signup");
 });
 
 // POST /auth/signup
@@ -109,7 +108,7 @@ router.post("/login", isLoggedOut, (req, res, next) => {
   }
 
   // Search the database for a user with the email submitted in the form
-  User.findOne({username})
+  User.findOne({ username })
     .then((user) => {
       // If the user isn't found, send an error message that user provided wrong credentials
       if (!user) {
@@ -143,7 +142,7 @@ router.post("/login", isLoggedOut, (req, res, next) => {
 });
 
 // GET /auth/logout
-router.get("/logout", isLoggedIn, (req, res) => {
+router.post("/logout", isLoggedIn, (req, res) => {
   req.session.destroy((err) => {
     if (err) {
       res.status(500).render("auth/logout", { errorMessage: err.message });
@@ -153,7 +152,5 @@ router.get("/logout", isLoggedIn, (req, res) => {
     res.redirect("/");
   });
 });
-
-
 
 module.exports = router;
