@@ -1,0 +1,19 @@
+.productImgDetails {
+  height: 30rem;
+  width: 50rem;
+  overflow: hidden;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.343);
+  margin: 5%;
+}
+
+.cake-details {
+  display: flex;
+  justify-content: center;
+}
+h1 {
+  font-family: "Montserrat";
+  text-transform: uppercase;
+  font-weight: 2000px;
+}

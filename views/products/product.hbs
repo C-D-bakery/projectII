@@ -21,8 +21,8 @@
           />
           <div class="card-body">
             <h5 class="card-title">{{this.name}}</h5>
-            {{!-- <p class="card-text">Some quick example text to build on the card
-              title and make up the bulk of the card's content.</p> --}}
+            {{! <p class="card-text">Some quick example text to build on the card
+              title and make up the bulk of the card's content.</p> }}
           </div>
           <ul class="list-group list-group-flush">
             <li class="list-group-item">Price: {{this.price}}€</li>
@@ -30,10 +30,15 @@
             <li class="list-group-item">Made by: {{this.madeby.username}} </li>
           </ul>
           <div class="card-body">
-            <a id="EnD" href="/product/{{this._id}}/update" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" >Edit</a>
-            <a id="EnD" 
+            <a
+              id="EnD"
+              href="/product/{{this._id}}/update"
+              class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
+            >Edit</a>
+            <a
+              id="EnD"
               href="/product/{{this._id}}/details"
-              class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" 
+              class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
             >Details</a>
             <form method="POST" action="/product/{{this._id}}/delete">
               <br />
@@ -46,34 +51,88 @@
   </div>
 </div>
 <br />
-<section class="u-clearfix u-palette-5-dark-1 u-section-3" id="carousel_28a9">
+{{! <section class="u-clearfix u-palette-5-dark-1 u-section-3" id="carousel_28a9">
       <div class="u-clearfix u-sheet u-sheet-1">
-        <h2 class="u-align-center u-custom-font u-font-montserrat u-text u-text-default u-text-1">-​Catalog-</h2>
+        <h2 class="u-align-center u-custom-font u-font-montserrat u-text u-text-default u-text-1">Gallery</h2>
         <div class="u-gallery u-layout-grid u-lightbox u-no-transition u-show-text-on-hover u-gallery-1">
           <div class="u-gallery-inner u-gallery-inner-1">
             <div class="u-effect-fade u-effect-hover-zoom u-gallery-item">
-              <div class="u-back-slide" data-image-width="1823" data-image-height="1744">
-                <img class="u-back-image u-expanded u-back-image-1" src="/images/Purple flower.jpeg" alt="Butter Cream Cake">
+              
+                <img id="galleryIam" class="u-back-image u-expanded u-back-image-1" src="/images/Purple flower.jpeg" alt="Butter Cream Cake">
               </div>
               <div class="u-container-align-center u-over-slide u-shading u-valign-middle u-over-slide-1">
-                <h3 class="u-align-center u-custom-font u-font-montserrat u-gallery-heading" style="width: 321px; margin-right: auto; margin-left: auto; font-weight: 700;">Butter Cream Cake</h3>
-                <p class="u-align-center u-gallery-text" style="width: 321px; margin-right: auto; margin-left: auto;"></p>
+                <h3 class="u-align-center u-custom-font u-font-montserrat u-gallery-heading" style="width: 500px; margin-right: auto; margin-left: auto; font-weight: 700;">Bean Paste </h3>
+                <p class="u-align-center u-gallery-text" style="width: 200px; margin-right: auto; margin-left: auto;">CAKE</p>
               </div>
             </div>
             <div class="u-effect-fade u-effect-hover-zoom u-gallery-item">
-              <div class="u-back-slide" data-image-width="1536" data-image-height="2048">
-                <img class="u-back-image u-expanded u-back-image-2" src="/images/kIPkIP.jpeg" alt="Bean Paste ">
+               
+                <img id="galleryIam" class="u-back-image u-expanded u-back-image-2" src="/images/Butter Cream.jpeg" alt="Bean Paste ">
               </div>
               <div class="u-container-align-center u-over-slide u-shading u-valign-middle u-over-slide-2">
-                <h3 class="u-align-center u-custom-font u-font-montserrat u-gallery-heading" style="width: 321px; margin-right: auto; margin-left: auto; font-weight: 700;">Bean Paste </h3>
+                <h3 class="u-align-center u-custom-font u-font-montserrat u-gallery-heading" style="width: 500px; margin-right: auto; margin-left: auto; font-weight: 700;">Butter Cream </h3>
+                <p class="u-align-center u-gallery-text" style="width: 200px; margin-right: auto; margin-left: auto;">CAKE</p>
+              </div>
+            </div>
+            <div class="u-effect-fade u-effect-hover-zoom u-gallery-item">
+               
+                <img id="galleryIam" class="u-back-image u-expanded u-back-image-3" src="images/LemonBun.jpeg" alt="Lemon Bun">
+              </div>
+              <div class="u-container-align-center u-over-slide u-shading u-valign-middle u-over-slide-3">
+                <h3 class="u-align-center u-custom-font u-font-montserrat u-gallery-heading" style="width: 500px; margin-right: auto; margin-left: auto; font-weight: 700;">Lemon </h3>
+                <p class="u-align-center u-gallery-text" style="width: 200px; margin-right: auto; margin-left: auto;">BUN</p>
+              </div>
+               
+             <div class="u-effect-fade u-effect-hover-zoom u-gallery-item">
+             
+                <img id="galleryIam" class="u-back-image u-expanded u-back-image-4" src="images/Halloween.jpeg" alt="Halloween">
+              </div>
+              <div class="u-container-align-center u-over-slide u-shading u-valign-middle u-over-slide-4">
+                <h3 class="u-align-center u-custom-font u-font-montserrat u-gallery-heading" style="width: 321px; margin-right: auto; margin-left: auto; font-weight: 700;">Halloween</h3>
+                <p class="u-align-center u-gallery-text" style="width: 321px; margin-right: auto; margin-left: auto;">LUNCH-BOX CAKE</p>
+              </div>
+            </div>
+            <div class="u-effect-fade u-effect-hover-zoom u-gallery-item">
+              
+                <img id="galleryIam" class="u-back-image u-expanded" src="/images/Flowers cup-cake.jpeg" alt="Flower Piping ">
+              </div>
+              <div class="u-container-align-center u-over-slide u-shading u-valign-middle u-over-slide-5">
+                <h3 class="u-align-center u-custom-font u-font-montserrat u-gallery-heading" style="width: 321px; margin-right: auto; margin-left: auto; font-weight: 700;">Flower Piping </h3>
+                <p class="u-align-center u-gallery-text" style="width: 321px; margin-right: auto; margin-left: auto;">CUPCAKE</p>
+              </div>
+            </div>
+            <div class="u-effect-fade u-effect-hover-zoom u-gallery-item">
+             
+                <img id="galleryIam" class="u-back-image u-expanded" src="/images/kIPkIP.jpeg" alt="KipKip ">
+              </div>
+              <div class="u-container-align-center u-over-slide u-shading u-valign-middle u-over-slide-6">
+                <h3 class="u-align-center u-custom-font u-font-montserrat u-gallery-heading" style="width: 321px; margin-right: auto; margin-left: auto; font-weight: 700;">KipKip </h3>
                 <p class="u-align-center u-gallery-text" style="width: 321px; margin-right: auto; margin-left: auto;">CAKE</p>
               </div>
             </div>
-            <div class="u-effect-fade u-effect-hover-zoom u-gallery-item">
-              <div class="u-back-slide" data-image-width="1536" data-image-height="2048">
-                <img class="u-back-image u-expanded u-back-image-3" src="images/LemonBun.jpeg" alt="Lemon Bun">
+            <div class="u-effect-fade u-effect-hover-zoom u-gallery-item" data-image-width="1536" data-image-height="2048">
+             
+                <img id="galleryIam" class="u-back-image u-expanded u-image-contain u-back-image-7" src="images/Ramen.jpeg" alt="Ramen">
               </div>
-              <div class="u-container-align-center u-over-slide u-shading u-valign-middle u-over-slide-3">
-                <h3 class="u-align-center u-custom-font u-font-montserrat u-gallery-heading" style="width: 321px; margin-right: auto; margin-left: auto; font-weight: 700;">Lemon Bun</h3>
-                <p class="u-align-center u-gallery-text" style="width: 321px; margin-right: auto; margin-left: auto;"></p>
+              <div class="u-container-align-center u-over-slide u-shading u-valign-middle u-over-slide-7">
+                <h3 class="u-align-center u-custom-font u-font-montserrat u-gallery-heading" style="width: 321px; margin-right: auto; margin-left: auto; font-weight: 700;">Ramen</h3>
+                <p class="u-align-center u-gallery-text" style="width: 321px; margin-right: auto; margin-left: auto;">CAKE</p>
               </div>
+            </div>
+            <div class="u-effect-fade u-effect-hover-zoom u-gallery-item" data-image-width="1536" data-image-height="2048">
+              
+                <img id="galleryIam" class="u-back-image u-expanded u-back-image-8" src="images/Marshmallow.jpeg" alt="Marshmallow">
+              </div>
+              <div class="u-container-align-center u-over-slide u-shading u-valign-middle u-over-slide-8">
+                <h3 class="u-align-center u-custom-font u-font-montserrat u-gallery-heading" style="width: 321px; margin-right: auto; margin-left: auto; font-weight: 700;">Marshmallow</h3>
+                <p class="u-align-center u-gallery-text" style="width: 321px; margin-right: auto; margin-left: auto;">CAKE</p>
+              </div>
+            </div>
+            <div class="u-effect-fade u-effect-hover-zoom u-gallery-item" data-image-width="1536" data-image-height="2048">
+            
+                <img id="galleryIam" class="u-back-image u-expanded u-back-image-9" src="/images/Flowers mooncakes.jpeg" alt="Bean Paste">
+              </div>
+              <div class="u-container-align-center u-over-slide u-shading u-valign-middle u-over-slide-9">
+                <h3 class="u-align-center u-custom-font u-font-montserrat u-gallery-heading" style="width: 321px; margin-right: auto; margin-left: auto; font-weight: 700;">Bean Paste</h3>
+                <p class="u-align-center u-gallery-text" style="width: 321px; margin-right: auto; margin-left: auto;">MOONCAKE</p>
+              </div> }}

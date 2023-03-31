@@ -23,6 +23,9 @@ h1 {
   background-color: #edb7e4;
 }
 #sectionIcons {
-  display: flexbox;
-  justify-content: space-between;
+  background-color: white;
+  height: 600px;
+}
+.card-text {
+  letter-spacing: 1.2px;
 }
