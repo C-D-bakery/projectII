@@ -156,5 +156,9 @@ router.post("/product/order", isUserLoggedIn, (req, res) => {
       res.status(500).send("Error placing order.");
     });
 });
+//////new
+router.get("/gallery", isUserLoggedIn, (req, res) => {
+  res.render("../views/products/gallery.hbs");
+});
 
 module.exports = router;
