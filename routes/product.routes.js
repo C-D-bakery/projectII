@@ -157,7 +157,7 @@ router.post("/product/order", isUserLoggedIn, (req, res) => {
     });
 });
 //////new
-router.get("/gallery", isUserLoggedIn, (req, res) => {
+router.get("/gallery", (req, res) => {
   res.render("../views/products/gallery.hbs");
 });
 
