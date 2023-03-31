@@ -147,7 +147,8 @@ router.post("/product/order", isUserLoggedIn, (req, res) => {
   newOrder
     .save()
     .then(() => {
-      res.send("Order placed successfully!");
+      console.log("Order placed successfully!");
+      res.redirect("/");
     })
 
     .catch((err) => {
