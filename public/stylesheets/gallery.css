@@ -11,9 +11,23 @@
   background-color: lightblue;
   text-align: center;
   letter-spacing: 2px;
-  margin: 2px 20px 15px;
-  padding: 3px 35px 7px;
+  margin: 2px 2px 15px;
+  padding: 9px 35px 7px;
 }
 #galleryIam {
   width: 900px;
 }
+#DD {
+  background-color: hotpink;
+  text-align: center;
+  letter-spacing: 2px;
+  margin: 2px 100px 15px;
+  padding: 9px 25px 7px;
+}
+/* #order {
+  margin: 19px 160px 6px;
+  padding: 10px 10px 10px;
+} */
+/* .card-body {
+  display: flex;
+
