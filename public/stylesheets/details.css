@@ -15,5 +15,7 @@
 h1 {
   font-family: "Montserrat";
   text-transform: uppercase;
-  font-weight: 2000px;
+  font-weight: 800px;
+  text-indent: 100px;
+  text-shadow: 5px 5px pink;
 }

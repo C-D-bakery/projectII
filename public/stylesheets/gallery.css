@@ -6,8 +6,7 @@
 }
 #carousel_28a9 {
   text-align: center;
- 
-  
+  font-family: "Montserrat";
 }
 #EnD {
   background-color: lightblue;
@@ -18,7 +17,6 @@
 }
 #galleryIam {
   width: 800px;
- 
 }
 #DD {
   background-color: hotpink;
@@ -30,7 +28,13 @@
 /* #order {
   margin: 19px 160px 6px;
   padding: 10px 10px 10px;
-} */
-/* .card-body {
+} 
+.card-body {
   display: flex;
-
+}
+*/
+h2 {
+  font-family: "Montserrat";
+  text-transform: uppercase;
+  text-shadow: 5px 5px pink;
+}

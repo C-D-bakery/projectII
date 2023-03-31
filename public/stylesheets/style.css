@@ -100,6 +100,7 @@ h9 {
 #about1 {
   background-image: url("../images/making\ of.jpeg");
   width: 150px;
+  height: 650px;
   background-position: right;
   background-repeat: no-repeat;
   background-size: contain;
@@ -111,7 +112,7 @@ h9 {
 .about2 {
   display: flex;
   justify-content: space-evenly;
-  padding: 15px;
+
   align-content: center;
 }
 .about3 {
@@ -119,22 +120,23 @@ h9 {
 }
 h4 {
   font-family: "Montserrat";
+  font-style: italic;
   padding: 29px;
   height: 80px;
 }
 #aboutC {
   text-indent: 100px;
-  line-height: 2.2;
+  line-height: 2;
   margin-right: 20px;
 }
 .icon2 {
   margin: 2px;
   width: 220px;
   height: 220px;
-  padding: 20px;
+  padding: 48px;
   border-radius: 50%;
   margin-bottom: 50px;
-  margin-left: 500px;
+  margin-left: 380px;
 }
 footer {
   position: absolute;
